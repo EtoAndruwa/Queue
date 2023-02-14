@@ -2,8 +2,9 @@
 
 void queue_ctor(queue* queue_str)
 {
-    queue_str->head = 1;
-    queue_str->tail = 1;
+    queue_str->head = 0;
+    queue_str->tail = 0;
+    queue_str->num_in_queu = 0;
     queue_str->queue_ptr = (queue_type*)calloc(queue_str->size, sizeof(queue_type));
 
     for(size_t i = 0; i < queue_str->size; i++)
@@ -22,35 +23,34 @@ void queue_dtor(queue* queue_str)
     queue_str->head = POISON;
     queue_str->tail = POISON;
     queue_str->size = POISON;
+    queue_str->num_in_queu = POISON;
     free(queue_str->queue_ptr);
     queue_str->queue_ptr = nullptr;
 }
 
 void push_queue(queue* queue_str, queue_type val)
 {   
-    if(check_tail_head)
+    if(check_tail_head(queue_str))
     {   
         queue_str->queue_ptr[queue_str->tail] = val;
         queue_str->tail++;
+        queue_str->num_in_queu++;
     }
     else
     {
         printf("queue if full! pls pop\n");
     }
 }
+
 queue_type pop_queue(queue* queue_str)
 {
-    if(check_tail_head)
+    if(queue_str->num_in_queu != 0)
     {   
         queue_type val_pop = queue_str->queue_ptr[queue_str->head];
         queue_str->queue_ptr[queue_str->head] = POISON;
         queue_str->head++;
-        return val_pop;
-    }
-    else if((queue_str->head == queue_str->tail) && queue_str->queue_ptr[queue_str->head] != POISON)   
-    {   
-        queue_type val_pop = queue_str->queue_ptr[queue_str->head];
-        queue_str->queue_ptr[queue_str->head] = POISON;
+        queue_str->num_in_queu--;
+        printf("popped value: %d\n", val_pop);
         return val_pop;
     }
     else
@@ -61,13 +61,12 @@ queue_type pop_queue(queue* queue_str)
 
 size_t check_tail_head(queue* queue_str)
 {
-    if(int(queue_str->tail) == int(queue_str->head) - 1)
+    if((queue_str->tail == queue_str->head) && ((queue_str->num_in_queu) != 0))
     {
-        printf("queue_str->tail == queue_str->head - 1\n");
         return 0;
     }
     else
-    {
+    {   
         return 1;
     }
 }
@@ -94,7 +93,7 @@ void logic(queue* queue_str)
             }
             break;
         case 2:
-            printf("popped value: %d\n", pop_queue(queue_str));
+            pop_queue(queue_str);
             break;
         case 3:
             queue_print(queue_str);

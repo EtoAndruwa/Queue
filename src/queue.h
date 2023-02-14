@@ -11,9 +11,10 @@ typedef int queue_type;
 
 typedef struct queue
 {
-    unsigned char tail = 1;
-    unsigned char head = 1;
+    unsigned char tail = 0;
+    unsigned char head = 0;
     size_t size = QUEUE_SIZE;
+    size_t num_in_queu = 0;
     queue_type* queue_ptr = nullptr;
 }queue;
 
