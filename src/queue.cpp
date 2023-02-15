@@ -63,11 +63,11 @@ size_t check_tail_head(queue* queue_str)
 {
     if((queue_str->tail == queue_str->head) && ((queue_str->num_in_queu) != 0))
     {
-        return 0;
+        return 0; // Queue is full
     }
     else
     {   
-        return 1;
+        return 1; // Queue is not full
     }
 }
 
