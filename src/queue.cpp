@@ -1,35 +1,9 @@
 #include "queue.h"
 
-void queue_ctor(queue* queue_str)
-{
-    queue_str->head = 0;
-    queue_str->tail = 0;
-    queue_str->num_in_queu = 0;
-    queue_str->queue_ptr = (queue_type*)calloc(queue_str->size, sizeof(queue_type));
-
-    for(size_t i = 0; i < queue_str->size; i++)
-    {
-        queue_str->queue_ptr[i] = POISON;
-    }
-}
-
-void queue_dtor(queue* queue_str)
-{
-    for(size_t i = 0; i < queue_str->size; i++)
-    {
-        queue_str->queue_ptr[i] = POISON;
-    }
-
-    queue_str->head = POISON;
-    queue_str->tail = POISON;
-    queue_str->size = POISON;
-    queue_str->num_in_queu = POISON;
-    free(queue_str->queue_ptr);
-    queue_str->queue_ptr = nullptr;
-}
-
 void push_queue(queue* queue_str, queue_type val)
 {   
+    check_errors(queue_str, FUNC_NAME, FUNC_LINE, FUNC_FILE);
+
     if(check_tail_head(queue_str))
     {   
         queue_str->queue_ptr[queue_str->tail] = val;
@@ -40,10 +14,14 @@ void push_queue(queue* queue_str, queue_type val)
     {
         printf("queue if full! pls pop\n");
     }
+
+    check_errors(queue_str, FUNC_NAME, FUNC_LINE, FUNC_FILE);
 }
 
 queue_type pop_queue(queue* queue_str)
 {
+    check_errors(queue_str, FUNC_NAME, FUNC_LINE, FUNC_FILE);
+
     if(queue_str->num_in_queu != 0)
     {   
         queue_type val_pop = queue_str->queue_ptr[queue_str->head];
@@ -57,18 +35,8 @@ queue_type pop_queue(queue* queue_str)
     {
         printf("queue is empty! pls push\n");
     }
-}
 
-size_t check_tail_head(queue* queue_str)
-{
-    if((queue_str->tail == queue_str->head) && ((queue_str->num_in_queu) != 0))
-    {
-        return 0; // Queue is full
-    }
-    else
-    {   
-        return 1; // Queue is not full
-    }
+    check_errors(queue_str, FUNC_NAME, FUNC_LINE, FUNC_FILE);
 }
 
 void logic(queue* queue_str)

@@ -7,6 +7,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define QUEUE_SIZE 256 // The size of the queue
+#define FUNC_NAME __func__ // used in order to get the name of the function which called the error
+#define FUNC_LINE __LINE__ // used in order to get the line from which the error was called
+#define FUNC_FILE __FILE__
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+
+enum error_code
+{
+    OK               = 0,
+    ERR_QUEUE_NULPTR = 1,
+    ERR_INV_TAIL     = 2,
+    ERR_INV_HEAD     = 3
+};
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -17,8 +30,9 @@ typedef struct queue
     unsigned char tail    = 0;          // The index of the tail in the queue
     unsigned char head    = 0;          // The index of the head in the queue
     size_t size           = QUEUE_SIZE; // The size of the queue
-    size_t num_in_queu    = 0;          // The number of the 
+    size_t num_in_queu    = 0;          // The total number of elements in the queue
     queue_type* queue_ptr = nullptr;    // The pointer to the array with elements of the queue
+    size_t error_code     = OK;
 }queue;
 
 const queue_type POISON = 0xDED; // The poison value for elements of the queue
@@ -76,6 +90,28 @@ size_t check_tail_head(queue* queue_str);
  * @param queue_str is the main struct of the program, which contains all information about queue
  */
 void logic(queue* queue_str);
+
+/**
+ * @brief 
+ * 
+ * @param error_code 
+ * @return const char* 
+ */
+const char* enum_to_string(size_t error_code);
+
+/**
+ * @brief 
+ * 
+ * @param queue_str 
+ */
+void check_errors(queue* queue_str, const char* FNC_NAME, size_t FNC_LINE, const char* FILE_NAME);
+
+/**
+ * @brief 
+ * 
+ * @param queue_str 
+ */
+void queue_dump(queue* queue_str, const char* FNC_NAME, size_t FNC_LINE, const char* FILE_NAME);
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------*/
 
