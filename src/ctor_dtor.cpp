@@ -6,8 +6,8 @@ void queue_ctor(queue* queue_str)
     queue_str->tail = 0;
     queue_str->num_in_queu = 0;
     queue_str->error_code = OK;
+    queue_str->queue_ptr = (queue_type*)calloc(queue_str->num_in_queu, sizeof(queue_type));
 
-    queue_str->queue_ptr = nullptr;
     check_errors(queue_str, FUNC_NAME, FUNC_LINE, FUNC_FILE);
 
     for(size_t i = 0; i < queue_str->size; i++)
