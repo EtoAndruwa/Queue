@@ -7,9 +7,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define QUEUE_SIZE 256 // The size of the queue
-#define FUNC_NAME __func__ // used in order to get the name of the function which called the error
-#define FUNC_LINE __LINE__ // used in order to get the line from which the error was called
-#define FUNC_FILE __FILE__
+#define FUNC_NAME __func__ // used in order to get the name of the function which called the dump
+#define FUNC_LINE __LINE__ // used in order to get the line from which the dump was called
+#define FUNC_FILE __FILE__ // used in order to get the file name from which the dump was called
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------*/
 
@@ -92,24 +92,24 @@ size_t check_tail_head(queue* queue_str);
 void logic(queue* queue_str);
 
 /**
- * @brief 
+ * @brief Converts enum error code of the struct to the string
  * 
- * @param error_code 
- * @return const char* 
+ * @param error_code is the error code of the struct
+ * @return const char* the name of the error code in enum, which is converted to the string
  */
 const char* enum_to_string(size_t error_code);
 
 /**
- * @brief 
+ * @brief Checks for errors, calls dump and dtor if needed
  * 
- * @param queue_str 
+ * @param queue_str is the main struct of the program, which contains all information about queue
  */
 void check_errors(queue* queue_str, const char* FNC_NAME, size_t FNC_LINE, const char* FILE_NAME);
 
 /**
- * @brief 
+ * @brief Prints to the dump file all data about queue struct
  * 
- * @param queue_str 
+ * @param queue_str is the main struct of the program, which contains all information about queue
  */
 void queue_dump(queue* queue_str, const char* FNC_NAME, size_t FNC_LINE, const char* FILE_NAME);
 
