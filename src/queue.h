@@ -46,6 +46,8 @@ const queue_type POISON = 0xDED; // The poison value for elements of the queue
  */
 void queue_print(queue* queue_str);
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+
 /**
  * @brief Function that creates and initializes the main struct of the program
  * 
@@ -53,12 +55,16 @@ void queue_print(queue* queue_str);
  */
 void queue_ctor(queue* queue_str);
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+
 /**
  * @brief Function that deletes all data about the main struct of the program, moreover it deletes all elements of the queue
  * 
  * @param queue is the main struct of the program, which contains all information about queue
  */
 void queue_dtor(queue* queue_str);
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /**
  * @brief Function that deletes the element of the queue from the head of the queue 
@@ -68,6 +74,8 @@ void queue_dtor(queue* queue_str);
  */
 queue_type pop_queue(queue* queue_str);
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+
 /**
  * @brief Function that pushes the element to the tail of the queue
  * 
@@ -75,6 +83,8 @@ queue_type pop_queue(queue* queue_str);
  * @param val is the element's value, that will be added to the tail of the queue
  */
 void push_queue(queue* queue_str, queue_type val);
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /**
  * @brief Function which is used in order to prevent overflow of the queue
@@ -84,12 +94,16 @@ void push_queue(queue* queue_str, queue_type val);
  */
 size_t check_tail_head(queue* queue_str);
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+
 /**
  * @brief Function that controls function calls according to the input
  * 
  * @param queue_str is the main struct of the program, which contains all information about queue
  */
 void logic(queue* queue_str);
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /**
  * @brief Converts enum error code of the struct to the string
@@ -99,12 +113,16 @@ void logic(queue* queue_str);
  */
 const char* enum_to_string(size_t error_code);
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
+
 /**
  * @brief Checks for errors, calls dump and dtor if needed
  * 
  * @param queue_str is the main struct of the program, which contains all information about queue
  */
 void check_errors(queue* queue_str, const char* FNC_NAME, size_t FNC_LINE, const char* FILE_NAME);
+
+/*-----------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /**
  * @brief Prints to the dump file all data about queue struct
@@ -114,5 +132,4 @@ void check_errors(queue* queue_str, const char* FNC_NAME, size_t FNC_LINE, const
 void queue_dump(queue* queue_str, const char* FNC_NAME, size_t FNC_LINE, const char* FILE_NAME);
 
 /*-----------------------------------------------------------------------------------------------------------------------------------------------*/
-
 #endif
