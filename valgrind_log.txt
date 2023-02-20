@@ -1,364 +1,384 @@
-==433== Memcheck, a memory error detector
-==433== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==433== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==433== Command: ./QUEUE.exe
-==433== Parent PID: 432
-==433== 
-==433== error calling PR_SET_PTRACER, vgdb might block
-==433== Invalid read of size 4
-==433==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
-==433==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== Conditional jump or move depends on uninitialised value(s)
-==433==    at 0x48D7B56: __vfprintf_internal (vfprintf-internal.c:1516)
-==433==    by 0x48C1749: fprintf (fprintf.c:32)
-==433==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433==  Uninitialised value was created by a heap allocation
-==433==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
-==433==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
-==433==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== Use of uninitialised value of size 8
-==433==    at 0x48BB33B: _itoa_word (_itoa.c:177)
-==433==    by 0x48D6B3D: __vfprintf_internal (vfprintf-internal.c:1516)
-==433==    by 0x48C1749: fprintf (fprintf.c:32)
-==433==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433==  Uninitialised value was created by a heap allocation
-==433==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
-==433==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
-==433==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== Conditional jump or move depends on uninitialised value(s)
-==433==    at 0x48BB34C: _itoa_word (_itoa.c:177)
-==433==    by 0x48D6B3D: __vfprintf_internal (vfprintf-internal.c:1516)
-==433==    by 0x48C1749: fprintf (fprintf.c:32)
-==433==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433==  Uninitialised value was created by a heap allocation
-==433==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
-==433==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
-==433==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== Conditional jump or move depends on uninitialised value(s)
-==433==    at 0x48D7643: __vfprintf_internal (vfprintf-internal.c:1516)
-==433==    by 0x48C1749: fprintf (fprintf.c:32)
-==433==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433==  Uninitialised value was created by a heap allocation
-==433==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
-==433==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
-==433==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== Conditional jump or move depends on uninitialised value(s)
-==433==    at 0x48D6C85: __vfprintf_internal (vfprintf-internal.c:1516)
-==433==    by 0x48C1749: fprintf (fprintf.c:32)
-==433==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433==  Uninitialised value was created by a heap allocation
-==433==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
-==433==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
-==433==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== Invalid write of size 4
-==433==    at 0x109415: queue_ctor(queue*) (ctor_dtor.cpp:15)
-==433==    by 0x10959E: main (main.cpp:6)
-==433==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
-==433==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== Invalid read of size 4
-==433==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x10944F: queue_ctor(queue*) (ctor_dtor.cpp:18)
-==433==    by 0x10959E: main (main.cpp:6)
-==433==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
-==433==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== Invalid read of size 4
-==433==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x109AE6: push_queue(queue*, int) (queue.cpp:5)
-==433==    by 0x109D31: logic(queue*) (queue.cpp:55)
-==433==    by 0x1095AA: main (main.cpp:7)
-==433==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
-==433==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== Invalid read of size 4
-==433==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x109350: check_tail_head(queue*) (check_fnc.cpp:31)
-==433==    by 0x109AF2: push_queue(queue*, int) (queue.cpp:7)
-==433==    by 0x109D31: logic(queue*) (queue.cpp:55)
-==433==    by 0x1095AA: main (main.cpp:7)
-==433==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
-==433==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== Invalid write of size 4
-==433==    at 0x109B19: push_queue(queue*, int) (queue.cpp:9)
-==433==    by 0x109D31: logic(queue*) (queue.cpp:55)
-==433==    by 0x1095AA: main (main.cpp:7)
-==433==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
-==433==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== Invalid read of size 4
-==433==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x109B71: push_queue(queue*, int) (queue.cpp:18)
-==433==    by 0x109D31: logic(queue*) (queue.cpp:55)
-==433==    by 0x1095AA: main (main.cpp:7)
-==433==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
-==433==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== Invalid write of size 4
-==433==    at 0x109480: queue_dtor(queue*) (ctor_dtor.cpp:25)
-==433==    by 0x1095B6: main (main.cpp:8)
-==433==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
-==433==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== 
-==433== HEAP SUMMARY:
-==433==     in use at exit: 0 bytes in 0 blocks
-==433==   total heap usage: 13 allocs, 13 frees, 5,944 bytes allocated
-==433== 
-==433== All heap blocks were freed -- no leaks are possible
-==433== 
-==433== ERROR SUMMARY: 1821 errors from 13 contexts (suppressed: 0 from 0)
-==433== 
-==433== 1 errors in context 1 of 13:
-==433== Invalid write of size 4
-==433==    at 0x109B19: push_queue(queue*, int) (queue.cpp:9)
-==433==    by 0x109D31: logic(queue*) (queue.cpp:55)
-==433==    by 0x1095AA: main (main.cpp:7)
-==433==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
-==433==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== 
-==433== 34 errors in context 2 of 13:
-==433== Invalid read of size 4
-==433==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
-==433==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== 
-==433== 50 errors in context 3 of 13:
-==433== Conditional jump or move depends on uninitialised value(s)
-==433==    at 0x48D6C85: __vfprintf_internal (vfprintf-internal.c:1516)
-==433==    by 0x48C1749: fprintf (fprintf.c:32)
-==433==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433==  Uninitialised value was created by a heap allocation
-==433==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
-==433==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
-==433==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== 
-==433== 50 errors in context 4 of 13:
-==433== Conditional jump or move depends on uninitialised value(s)
-==433==    at 0x48D7643: __vfprintf_internal (vfprintf-internal.c:1516)
-==433==    by 0x48C1749: fprintf (fprintf.c:32)
-==433==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433==  Uninitialised value was created by a heap allocation
-==433==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
-==433==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
-==433==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== 
-==433== 50 errors in context 5 of 13:
-==433== Conditional jump or move depends on uninitialised value(s)
-==433==    at 0x48BB34C: _itoa_word (_itoa.c:177)
-==433==    by 0x48D6B3D: __vfprintf_internal (vfprintf-internal.c:1516)
-==433==    by 0x48C1749: fprintf (fprintf.c:32)
-==433==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433==  Uninitialised value was created by a heap allocation
-==433==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
-==433==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
-==433==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== 
-==433== 50 errors in context 6 of 13:
-==433== Use of uninitialised value of size 8
-==433==    at 0x48BB33B: _itoa_word (_itoa.c:177)
-==433==    by 0x48D6B3D: __vfprintf_internal (vfprintf-internal.c:1516)
-==433==    by 0x48C1749: fprintf (fprintf.c:32)
-==433==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433==  Uninitialised value was created by a heap allocation
-==433==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
-==433==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
-==433==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== 
-==433== 50 errors in context 7 of 13:
-==433== Conditional jump or move depends on uninitialised value(s)
-==433==    at 0x48D7B56: __vfprintf_internal (vfprintf-internal.c:1516)
-==433==    by 0x48C1749: fprintf (fprintf.c:32)
-==433==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433==  Uninitialised value was created by a heap allocation
-==433==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
-==433==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
-==433==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== 
-==433== 256 errors in context 8 of 13:
-==433== Invalid write of size 4
-==433==    at 0x109480: queue_dtor(queue*) (ctor_dtor.cpp:25)
-==433==    by 0x1095B6: main (main.cpp:8)
-==433==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
-==433==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== 
-==433== 256 errors in context 9 of 13:
-==433== Invalid read of size 4
-==433==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x109B71: push_queue(queue*, int) (queue.cpp:18)
-==433==    by 0x109D31: logic(queue*) (queue.cpp:55)
-==433==    by 0x1095AA: main (main.cpp:7)
-==433==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
-==433==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== 
-==433== 256 errors in context 10 of 13:
-==433== Invalid read of size 4
-==433==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x109350: check_tail_head(queue*) (check_fnc.cpp:31)
-==433==    by 0x109AF2: push_queue(queue*, int) (queue.cpp:7)
-==433==    by 0x109D31: logic(queue*) (queue.cpp:55)
-==433==    by 0x1095AA: main (main.cpp:7)
-==433==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
-==433==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== 
-==433== 256 errors in context 11 of 13:
-==433== Invalid read of size 4
-==433==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x109AE6: push_queue(queue*, int) (queue.cpp:5)
-==433==    by 0x109D31: logic(queue*) (queue.cpp:55)
-==433==    by 0x1095AA: main (main.cpp:7)
-==433==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
-==433==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== 
-==433== 256 errors in context 12 of 13:
-==433== Invalid read of size 4
-==433==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
-==433==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
-==433==    by 0x10944F: queue_ctor(queue*) (ctor_dtor.cpp:18)
-==433==    by 0x10959E: main (main.cpp:6)
-==433==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
-==433==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== 
-==433== 256 errors in context 13 of 13:
-==433== Invalid write of size 4
-==433==    at 0x109415: queue_ctor(queue*) (ctor_dtor.cpp:15)
-==433==    by 0x10959E: main (main.cpp:6)
-==433==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
-==433==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==433==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
-==433==    by 0x10959E: main (main.cpp:6)
-==433== 
-==433== ERROR SUMMARY: 1821 errors from 13 contexts (suppressed: 0 from 0)
+==1179== Memcheck, a memory error detector
+==1179== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1179== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==1179== Command: ./QUEUE.exe
+==1179== Parent PID: 1178
+==1179== 
+==1179== error calling PR_SET_PTRACER, vgdb might block
+==1179== Invalid read of size 4
+==1179==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== Conditional jump or move depends on uninitialised value(s)
+==1179==    at 0x48D7B56: __vfprintf_internal (vfprintf-internal.c:1516)
+==1179==    by 0x48C1749: fprintf (fprintf.c:32)
+==1179==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179==  Uninitialised value was created by a heap allocation
+==1179==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
+==1179==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+==1179==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== Use of uninitialised value of size 8
+==1179==    at 0x48BB33B: _itoa_word (_itoa.c:177)
+==1179==    by 0x48D6B3D: __vfprintf_internal (vfprintf-internal.c:1516)
+==1179==    by 0x48C1749: fprintf (fprintf.c:32)
+==1179==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179==  Uninitialised value was created by a heap allocation
+==1179==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
+==1179==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+==1179==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== Conditional jump or move depends on uninitialised value(s)
+==1179==    at 0x48BB34C: _itoa_word (_itoa.c:177)
+==1179==    by 0x48D6B3D: __vfprintf_internal (vfprintf-internal.c:1516)
+==1179==    by 0x48C1749: fprintf (fprintf.c:32)
+==1179==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179==  Uninitialised value was created by a heap allocation
+==1179==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
+==1179==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+==1179==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== Conditional jump or move depends on uninitialised value(s)
+==1179==    at 0x48D7643: __vfprintf_internal (vfprintf-internal.c:1516)
+==1179==    by 0x48C1749: fprintf (fprintf.c:32)
+==1179==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179==  Uninitialised value was created by a heap allocation
+==1179==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
+==1179==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+==1179==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== Conditional jump or move depends on uninitialised value(s)
+==1179==    at 0x48D6C85: __vfprintf_internal (vfprintf-internal.c:1516)
+==1179==    by 0x48C1749: fprintf (fprintf.c:32)
+==1179==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179==  Uninitialised value was created by a heap allocation
+==1179==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
+==1179==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+==1179==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== Invalid write of size 4
+==1179==    at 0x109415: queue_ctor(queue*) (ctor_dtor.cpp:15)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== Invalid read of size 4
+==1179==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x10944F: queue_ctor(queue*) (ctor_dtor.cpp:18)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== Invalid read of size 4
+==1179==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x109AE6: push_queue(queue*, int) (queue.cpp:5)
+==1179==    by 0x109D31: logic(queue*) (queue.cpp:55)
+==1179==    by 0x1095AA: main (main.cpp:7)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== Invalid read of size 4
+==1179==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x109350: check_tail_head(queue*) (check_fnc.cpp:31)
+==1179==    by 0x109AF2: push_queue(queue*, int) (queue.cpp:7)
+==1179==    by 0x109D31: logic(queue*) (queue.cpp:55)
+==1179==    by 0x1095AA: main (main.cpp:7)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== Invalid write of size 4
+==1179==    at 0x109B19: push_queue(queue*, int) (queue.cpp:9)
+==1179==    by 0x109D31: logic(queue*) (queue.cpp:55)
+==1179==    by 0x1095AA: main (main.cpp:7)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== Invalid read of size 4
+==1179==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x109B71: push_queue(queue*, int) (queue.cpp:18)
+==1179==    by 0x109D31: logic(queue*) (queue.cpp:55)
+==1179==    by 0x1095AA: main (main.cpp:7)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== Invalid read of size 4
+==1179==    at 0x109681: queue_print(queue*) (print_func.cpp:12)
+==1179==    by 0x109D65: logic(queue*) (queue.cpp:67)
+==1179==    by 0x1095AA: main (main.cpp:7)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== Invalid write of size 4
+==1179==    at 0x109480: queue_dtor(queue*) (ctor_dtor.cpp:25)
+==1179==    by 0x1095B6: main (main.cpp:8)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== 
+==1179== HEAP SUMMARY:
+==1179==     in use at exit: 0 bytes in 0 blocks
+==1179==   total heap usage: 13 allocs, 13 frees, 5,944 bytes allocated
+==1179== 
+==1179== All heap blocks were freed -- no leaks are possible
+==1179== 
+==1179== ERROR SUMMARY: 2077 errors from 14 contexts (suppressed: 0 from 0)
+==1179== 
+==1179== 1 errors in context 1 of 14:
+==1179== Invalid write of size 4
+==1179==    at 0x109B19: push_queue(queue*, int) (queue.cpp:9)
+==1179==    by 0x109D31: logic(queue*) (queue.cpp:55)
+==1179==    by 0x1095AA: main (main.cpp:7)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== 
+==1179== 34 errors in context 2 of 14:
+==1179== Invalid read of size 4
+==1179==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== 
+==1179== 50 errors in context 3 of 14:
+==1179== Conditional jump or move depends on uninitialised value(s)
+==1179==    at 0x48D6C85: __vfprintf_internal (vfprintf-internal.c:1516)
+==1179==    by 0x48C1749: fprintf (fprintf.c:32)
+==1179==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179==  Uninitialised value was created by a heap allocation
+==1179==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
+==1179==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+==1179==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== 
+==1179== 50 errors in context 4 of 14:
+==1179== Conditional jump or move depends on uninitialised value(s)
+==1179==    at 0x48D7643: __vfprintf_internal (vfprintf-internal.c:1516)
+==1179==    by 0x48C1749: fprintf (fprintf.c:32)
+==1179==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179==  Uninitialised value was created by a heap allocation
+==1179==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
+==1179==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+==1179==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== 
+==1179== 50 errors in context 5 of 14:
+==1179== Conditional jump or move depends on uninitialised value(s)
+==1179==    at 0x48BB34C: _itoa_word (_itoa.c:177)
+==1179==    by 0x48D6B3D: __vfprintf_internal (vfprintf-internal.c:1516)
+==1179==    by 0x48C1749: fprintf (fprintf.c:32)
+==1179==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179==  Uninitialised value was created by a heap allocation
+==1179==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
+==1179==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+==1179==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== 
+==1179== 50 errors in context 6 of 14:
+==1179== Use of uninitialised value of size 8
+==1179==    at 0x48BB33B: _itoa_word (_itoa.c:177)
+==1179==    by 0x48D6B3D: __vfprintf_internal (vfprintf-internal.c:1516)
+==1179==    by 0x48C1749: fprintf (fprintf.c:32)
+==1179==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179==  Uninitialised value was created by a heap allocation
+==1179==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
+==1179==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+==1179==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== 
+==1179== 50 errors in context 7 of 14:
+==1179== Conditional jump or move depends on uninitialised value(s)
+==1179==    at 0x48D7B56: __vfprintf_internal (vfprintf-internal.c:1516)
+==1179==    by 0x48C1749: fprintf (fprintf.c:32)
+==1179==    by 0x1099D4: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179==  Uninitialised value was created by a heap allocation
+==1179==    at 0x4848899: malloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x48E06CD: __fopen_internal (iofopen.c:65)
+==1179==    by 0x48E06CD: fopen@@GLIBC_2.2.5 (iofopen.c:86)
+==1179==    by 0x109779: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:31)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x1093F7: queue_ctor(queue*) (ctor_dtor.cpp:11)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== 
+==1179== 256 errors in context 8 of 14:
+==1179== Invalid write of size 4
+==1179==    at 0x109480: queue_dtor(queue*) (ctor_dtor.cpp:25)
+==1179==    by 0x1095B6: main (main.cpp:8)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== 
+==1179== 256 errors in context 9 of 14:
+==1179== Invalid read of size 4
+==1179==    at 0x109681: queue_print(queue*) (print_func.cpp:12)
+==1179==    by 0x109D65: logic(queue*) (queue.cpp:67)
+==1179==    by 0x1095AA: main (main.cpp:7)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== 
+==1179== 256 errors in context 10 of 14:
+==1179== Invalid read of size 4
+==1179==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x109B71: push_queue(queue*, int) (queue.cpp:18)
+==1179==    by 0x109D31: logic(queue*) (queue.cpp:55)
+==1179==    by 0x1095AA: main (main.cpp:7)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== 
+==1179== 256 errors in context 11 of 14:
+==1179== Invalid read of size 4
+==1179==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x109350: check_tail_head(queue*) (check_fnc.cpp:31)
+==1179==    by 0x109AF2: push_queue(queue*, int) (queue.cpp:7)
+==1179==    by 0x109D31: logic(queue*) (queue.cpp:55)
+==1179==    by 0x1095AA: main (main.cpp:7)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== 
+==1179== 256 errors in context 12 of 14:
+==1179== Invalid read of size 4
+==1179==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x109AE6: push_queue(queue*, int) (queue.cpp:5)
+==1179==    by 0x109D31: logic(queue*) (queue.cpp:55)
+==1179==    by 0x1095AA: main (main.cpp:7)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== 
+==1179== 256 errors in context 13 of 14:
+==1179== Invalid read of size 4
+==1179==    at 0x1099B7: queue_dump(queue*, char const*, unsigned long, char const*) (print_func.cpp:54)
+==1179==    by 0x10931B: check_errors(queue*, char const*, unsigned long, char const*) (check_fnc.cpp:25)
+==1179==    by 0x10944F: queue_ctor(queue*) (ctor_dtor.cpp:18)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== 
+==1179== 256 errors in context 14 of 14:
+==1179== Invalid write of size 4
+==1179==    at 0x109415: queue_ctor(queue*) (ctor_dtor.cpp:15)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179==  Address 0x4a8c040 is 0 bytes after a block of size 0 alloc'd
+==1179==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==1179==    by 0x1093CA: queue_ctor(queue*) (ctor_dtor.cpp:9)
+==1179==    by 0x10959E: main (main.cpp:6)
+==1179== 
+==1179== ERROR SUMMARY: 2077 errors from 14 contexts (suppressed: 0 from 0)

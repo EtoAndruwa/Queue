@@ -68,6 +68,5 @@ void queue_dump(queue* queue_str, const char* FNC_NAME, size_t FNC_LINE, const c
         }
     }
 
-
     fclose(dump_file);
 }

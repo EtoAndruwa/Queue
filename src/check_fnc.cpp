@@ -38,6 +38,4 @@ size_t check_tail_head(queue* queue_str)
     {   
         return 1; // Queue is not full
     }
-
-    check_errors(queue_str, FUNC_NAME, FUNC_LINE, FUNC_FILE);
 }
